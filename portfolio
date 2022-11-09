@@ -4,7 +4,7 @@ import './App.css';
 import { Map, MapMarker} from 'react-kakao-maps-sdk';
 import { LineChart, Lind, XAxis, YAxis, CartestanGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-function fetchDate(searchYaerCd) {
+function fetchDate(searchPlaceArea) {
   const url = 'https://apis.data.go.kr/1741000/EmergencyAssemblyArea_Earthquake2/getArea1List?serviceKey=eXVGr2vcQmKHjHVEiVoC9e4ST0cpj45yC6om4DVlYb3gByipddeJF8kqYXfkBLW1lOQLowDbfR1HHwzmthPRFg%3D%3D&pageNo=1&numOfRows=10&type=xml'
 
   const promise = fetch(url)
@@ -16,6 +16,15 @@ function fetchDate(searchYaerCd) {
     })
     
   return promise;
+}
+
+export default App;
+
+function App() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [data, setData] = useState(null);
+  const [searchPlaceArea, setSearchPlaceArea] = useState(2019);
 }
 
 function App() {
@@ -39,4 +48,5 @@ function App() {
   );
 }
 
-export default App;
+
+
