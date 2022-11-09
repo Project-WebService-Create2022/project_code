@@ -1,0 +1,42 @@
+import React, { useState, useContext, useEffect, useRef } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { Map, MapMarker} from 'react-kakao-maps-sdk';
+import { LineChart, Lind, XAxis, YAxis, CartestanGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+function fetchDate(searchYaerCd) {
+  const url = 'https://apis.data.go.kr/1741000/EmergencyAssemblyArea_Earthquake2/getArea1List?serviceKey=eXVGr2vcQmKHjHVEiVoC9e4ST0cpj45yC6om4DVlYb3gByipddeJF8kqYXfkBLW1lOQLowDbfR1HHwzmthPRFg%3D%3D&pageNo=1&numOfRows=10&type=xml'
+
+  const promise = fetch(url)
+    .then(res => {
+      if (!res.ok) {
+        throw res;
+      }
+      return res.json();
+    })
+    
+  return promise;
+}
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
