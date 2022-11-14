@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState, useRef } from "react";
 
-export default function KakaoMap(props) {
+export default function Weather(props) {
   const { markerPositions, size } = props;
-  const [kakaoMap, setKakaoMap] = useState(null);
+  const [Weather, setWeather] = useState(null);
   const [, setMarkers] = useState([]);
 
   const container = useRef();
@@ -12,30 +12,30 @@ export default function KakaoMap(props) {
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
-      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=680725885de706af93e1754f92f92e88&autoload=false";
+      "http://apis.data.go.kr/1360000/WthrChartInfoService/getSurfaceChart?appkey=F2Rw4w1N2FlrIJZmsiYjs6pSjy7B3P9AK0K3tu%2BTtMps%2FQfVU8KSOWRsSQv8AyK5MsoL8P7fRnvdwbqWVNNtDw%3D%3Dautoload=false";
     document.head.appendChild(script);
 
     script.onload = () => {
-      kakao.maps.load(() => {
-        const center = new kakao.maps.LatLng(37.50802, 127.062835);
+        Weather.maps.load(() => {
+        const center = new Weather.maps.LatLng(37.50802, 127.062835);
         const options = {
           center,
           level: 3
         };
-        const map = new kakao.maps.Map(container.current, options);
+        const map = new Weather.maps.Map(container.current, options);
         //setMapCenter(center);
-        setKakaoMap(map);
+        setWeather(map);
       });
     };
   }, [container]);
 
   useEffect(() => {
-    if (kakaoMap === null) {
+    if (Weather === null) {
       return;
     }
 
     // save center position
-    const center = kakaoMap.getCenter();
+    const center = Weather.getCenter();
 
     // change viewport size
     const [width, height] = size;
@@ -43,13 +43,13 @@ export default function KakaoMap(props) {
     container.current.style.height = `${height}px`;
 
     // relayout and...
-    kakaoMap.relayout();
+    Weather.relayout();
     // restore
-    kakaoMap.setCenter(center);
-  }, [kakaoMap, size]);
+    Weather.setCenter(center);
+  }, [Weather, size]);
 
   useEffect(() => {
-    if (kakaoMap === null) {
+    if (Weather === null) {
       return;
     }
 
@@ -61,7 +61,7 @@ export default function KakaoMap(props) {
 
       // assign new markers
       return positions.map(
-        position => new kakao.maps.Marker({ map: kakaoMap, position })
+        position => new Weather.maps.Marker({ map: Weather, position })
       );
     });
 
@@ -71,9 +71,9 @@ export default function KakaoMap(props) {
         new kakao.maps.LatLngBounds()
       );
 
-      kakaoMap.setBounds(bounds);
+      Weather.setBounds(bounds);
     }
-  }, [kakaoMap, markerPositions]);
+  }, [Weather, markerPositions]);
 
   return <div id="container" ref={container} />;
 }
