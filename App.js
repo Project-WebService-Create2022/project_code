@@ -79,7 +79,22 @@ export default function App() { // eslint-disable-next-line
           </>
         )}
       </div>
+      <div id="wrap-2">
+        {visible && (
+          <>
+            <h2>날씨정보</h2>
+            {/* need to bring the live weather cast here */}
+          </>
+        )}
+      </div>
+
+      {/* react footer  */}
+
+      </div>
      
-    </div>
+  
+    
+
+    
   );
 }
