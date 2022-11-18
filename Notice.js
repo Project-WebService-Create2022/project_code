@@ -1,99 +1,99 @@
-import './notice.css';
+import './notice.css'
 
 function Notice() {
   return (
-    <div className="all">
-    <div>
-      <h1>공지사항</h1>
-    </div>
-    <div>
-      <a href="#" class="nav_notice">공지사항</a>
-      <a href="#" class="nav_notice">공지사항(풍수해)</a>
-    </div>
-    &nbsp;
-    <div className="table1">
-    <table>
+    <div className="content">
 
-      <div className="search_1">
-        <tr>
-          <th>기본검색</th>
-          <th>
-            <select>
-              <option>제목</option>
-              <option>내용</option>
-            </select>
-          </th>
-          <th><input type="text" name="search" className="search_2"/></th>
-        </tr>
+      <div className="title">
+        <h1>공지사항</h1> 
       </div>
 
       <div>
-
-        <tr>
-          <th>등록일</th>
-          <th><input type="number" name="date" maxlength="8" className="search_3"/> -</th>
-          <th><input type="number" name="date" maxlength="8" className="search_3"/></th>
-          {/* <p>날짜입력예시 : 20221116</p> */}
-          <div className="button">
-            <button>검색</button>
-          </div>
-        </tr>
+        <a href="#" className="menu">공지사항</a>
+        <a href="#" className="menu">공지사항(풍수해)</a>
       </div>
-        
+
+      <form className="boardSearch">
+        <div>
+          <p>
+            기본검색
+          <select className="option">
+            <option>제목</option>
+            <option>내용</option>
+          </select>
+          <input type="search" className="search" />
+          </p>
+        </div>
+
+        <div>
+          <p>등록일
+            <input type="number" className="number1" />
+            - 
+            <input type="number" className="number2" />
+            날짜예시입력 : 20221118
+            <input type="submit" value="검색" className="submit"/>
+          </p>
+        </div>
+      </form>
+
+      <div>
+        전체 30 건
+      </div>
+
+      <table className="table">
+
+      <tr>
+        <th className="th1">번호</th>
+        <th className="th2">제목</th>
+        <th className="th3">부서</th>
+        <th className="th4">등록일</th>
+      </tr>
+
+      <tr>
+        <td className="td1">5</td>
+        <td className="td2"><a href="#5" className="subject">2022.11.03 서비스 점검 안내 공지</a></td>
+        <td className="td3">재난정보통신과</td>
+        <td className="td4">2022-11-01</td>
+      </tr>
+
+      <tr>
+        <td className="td1">4</td>
+        <td className="td2"><a href="#4" className="subject">전국 지진대피훈련 실시 공지</a></td>
+        <td className="td3">재난정보통신과</td>
+        <td className="td4">2022-09-01</td>
+      </tr>
+
+      <tr>
+        <td className="td1">3</td>
+        <td className="td2"><a href="#3" className="subject">비상연락망 관리(등록/수정)메뉴얼입니다</a></td>
+        <td className="td3">비상대비민방위정책관</td>
+        <td className="td4">2022-06-01</td>
+      </tr>
+
+      <tr>
+        <td className="td1">2</td>
+        <td className="td2"><a href="#2" className="subject">국민안전의식 자가진단테스트 이벤트</a></td>
+        <td className="td3">중앙재난안전상황실</td>
+        <td className="td4">2022-03-01</td>
+      </tr>
+
+      <tr>
+        <td className="td1">1</td>
+        <td className="td2"><a href="#1" className="subject">국가재난관리정보센터 시범서비스 안내</a></td>
+        <td className="td3">재난정보통신과</td>
+        <td className="td4">2022-01-01</td>
+      </tr>
+
       </table>
-    </div>
-    &nbsp;
-    <div className="table2">
-      <table>
-        <tr>
-          <th>번호</th>
-          <th>제목</th>
-          <th>부서</th>
-          <th>등록일</th>
-        </tr>
-        <tr>
-          <td className="notice_n">5</td>
-          <td><a href="#5" className="notice">2022.11.03 서비스 점검 안내 공지</a></td>
-          <td>재난정보통신과</td>
-          <td>2022-11-01</td>
-        </tr>
-        
-        <tr>
-          <td className="notice_n">4</td>
-          <td><a href="#4" className="notice">전국 지진대피훈련 실시 공지</a></td>
-          <td>재난정보통신과</td>
-          <td>2022-09-01</td>
-        </tr>
-        <tr>
-          <td className="notice_n">3</td>
-          <td><a href="#3" className="notice">비상연락망 관리(등록/수정)메뉴얼입니다</a></td>
-          <td>비상대비민방위정책관</td>
-          <td>2022-06-01</td>
-        </tr>
-        <tr>
-          <td className="notice_n">2</td>
-          <td><a href="#2" className="notice">국민안전의식 자가진단테스트 이벤트</a></td>
-          <td>중앙재난안전상황실</td>
-          <td>2022-03-01</td>
-        </tr>
-        <tr>
-          <td className="notice_n">1</td>
-          <td><a href="#1" className="notice">국가재난관리정보센터 시범서비스 안내</a></td>
-          <td>재난정보통신과</td>
-          <td>2022-01-01</td>
-        </tr>
-      </table>
-    </div>
-    &nbsp;
-    <div>
-      <a href="#" className="page">{'>'}</a>
-      <a href="#" className="page">5</a>
-      <a href="#" className="page">4</a>
-      <a href="#" className="page">3</a>
-      <a href="#" className="page">2</a>
-      <a href="#" className="page">1</a>
-      <a href="#" className="page">{'<'}</a>
-    </div>
+
+      <div>
+        <a href="#">{'<'}</a>
+        <a href="#">1/4</a>
+        <a href="#">{'>'}</a>
+        <input type="number" />
+        <input type="submit" value="이동" />
+      </div>
+
     </div>
   );
 }
