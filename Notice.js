@@ -86,16 +86,20 @@ function Notice() {
 
       </table>
 
-      <div>
-        <a href="#">{'<'}</a>
-        <a href="#">1/4</a>
-        <a href="#">{'>'}</a>
-        <input type="number" />
-        <input type="submit" value="이동" />
+      <div className="pagination">
+        <a href="#" className="pagination_list">{'<'}</a>
+        <a href="#" className="pagination_list">1</a>
+        <a href="#" className="pagination_list">2</a>
+        <a href="#" className="pagination_list">3</a>
+        <a href="#" className="pagination_list">4</a>
+        <a href="#" className="pagination_list">5</a>
+        <a href="#" className="pagination_list">{'>'}</a>
       </div>
 
+      
     </div>
   );
 }
+
 
 export default Notice;
