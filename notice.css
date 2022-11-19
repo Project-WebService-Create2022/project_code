@@ -106,3 +106,15 @@
   text-align: center;
   padding-left: 3rem;
 }
+.pagination {
+  padding: 15px 0px 15px 400px;
+}
+.pagination_list {
+  padding: 20px;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+.pagination_list:hover {
+  color: lightblue;
+}
