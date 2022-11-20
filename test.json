@@ -1,0 +1,16 @@
+{"coord":{"lon":126.9778,"lat":37.5683},
+"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations",
+"main":{"temp":282.77,"feels_like":282.32,"temp_min":281.81,"temp_max":284.84,"pressure":1021,"humidity":71},
+"visibility":10000,
+"wind":{"speed":1.54,"deg":330},
+"clouds":{"all":0},
+"dt":1668861224,
+"sys":{"type":1,"id":8105,"country":"KR","sunrise":1668809739,"sunset":1668845963},"timezone":32400,
+"id":1835848,
+"name":"Seoul",
+"cod":200}
+
+https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=99bfbfe44797995b67f1b4c4948e3ea2
+
+
+99bfbfe44797995b67f1b4c4948e3ea2
