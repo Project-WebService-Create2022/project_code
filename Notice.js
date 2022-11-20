@@ -1,6 +1,4 @@
 import './notice.css'
-// import React from 'react';
-// import { Link } from 'react-router-dom';
 
 function Notice() {
   return (
@@ -37,14 +35,6 @@ function Notice() {
             </li>
             <li>
               <a href="#">공지사항</a>
-              <ul>
-                <li>
-                  <a href="#">1</a>
-                </li>
-                <li>
-                  <a href="#">2</a>
-                </li>
-              </ul>
             </li>
 
           </ul>
