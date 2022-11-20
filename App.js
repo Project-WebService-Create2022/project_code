@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
+import axios from 'axios'
 import "./styles.css";
 import KakaoMap from "./KakaoMap";
 // import Weather from "./Weather";
@@ -24,6 +26,57 @@ export default function App() { // eslint-disable-next-line
 
   const [mapSize, setMapSize] = useState([400, 400]);
 
+  const API_KEY = "99bfbfe44797995b67f1b4c4948e3ea2";
+  const [location, setLocation] = useState('');
+  const [result, setResult] = useState({});
+  const url= 'https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=99bfbfe44797995b67f1b4c4948e3ea2';
+
+  const searchWeather = async (e) => {
+    if(e.key === 'Enter') {
+      try {
+        const data = await axios ({
+          method: 'get',
+          url: url
+
+        })
+
+        console.log(data);
+        setResult(data);
+      }
+      catch (err) {
+        alert (err);
+      }
+
+    }
+  }
+
+
+  const AppWrap = styled.div `
+    width: 8rem;
+    height: 8rem;
+    border: 1px pink solid;
+
+    .appContentWrap {
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%);
+      position: absolute;
+      border: 1px blue solid;
+      padding:20px;
+    }
+  `; 
+  
+  const ResultWrap = styled.div `
+    margin-top: 60px;
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 8px;
+
+  
+  `; 
+  
+  
+  
   return (
     <div className="App">
       <div className="App-nav">
@@ -82,18 +135,62 @@ export default function App() { // eslint-disable-next-line
       <div id="wrap-2">
         {visible && (
           <>
-            <h2>날씨정보</h2>
-            {/* need to bring the live weather cast here */}
+            <h2>날씨정보검색</h2>
+            <AppWrap>
+              <div className="appContentWrap">
+              <input 
+                placeholder= '도시를 입력하세요.'
+                value={location}
+                onChange={(e)=> setLocation(e.target.value)}
+                type= 'text'
+                onKeyDown={searchWeather}
+              />
+              <ResultWrap>
+                <div className="도시명">(result.name)</div>
+                <div className="기온">(result.data.main.tem)</div>
+                <div className="기상상태">(result.data.weather[0].main)</div>
+              </ResultWrap>
+
+              </div>
+
+            </AppWrap>
           </>
         )}
       </div>
 
       {/* react footer  */}
+      <hr></hr>
+      <div id = "footer">
+          <div class="bg-custom">
+            <div class = "divbox">
+              <div class="row">
+                <div class="col-md-12 p-5">
+                  <div class="row">
 
+                    <div class="col-md-3">
+                      <h3>Service</h3>
+                      <p>개발자 | 박지원 손진희 백경서 박아영</p>
+
+                        <ul>
+                          <li><a href="#">YouTube</a></li>
+                          <li><a href="#">Twitter</a></li>
+                          <li><a href="#">Third item</a></li>
+                          <li><a href="#">Fourth item</a></li>
+                        </ul>
+                    </div>
+                        <p>재난 신고전화(전국어디서나 1588-3650)는 국민적 관심 유도와 범국민적 신고체계를 확립하여 24시간 누수없는 대국민 신고 및 민원 접수가 가능토록 운영하기 위해 대표번호(1588-3650)를 누르면 해당 구·군 재난종합상황실로 자동 연결되는 서비스 시스템입니다.</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
      
   
-    
+      </div>
+
+
 
     
   );
