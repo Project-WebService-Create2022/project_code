@@ -1,7 +1,55 @@
 import './notice.css'
+// import React from 'react';
+// import { Link } from 'react-router-dom';
 
 function Notice() {
   return (
+    <div className='App'>
+      <div className="App-nav">
+        <div className="nav-bar">
+          <ul id="nav">
+            <li>
+              <a href="#">
+                지진대피소안내
+              </a>
+            </li>
+            <li>
+              <a href="#">지진대피소위치</a>
+              <ul>
+                <li>
+                  <a href="#">지역별위치검색</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">지진발생이력</a>
+              <ul>
+                <li>
+                  <a href="#">지역별</a>
+                </li>
+                <li>
+                  <a href="#">빈도수</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="   http://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/csc/bbs_conf.jsp?menuSeq=593&bbs_no=9">지진대피지침</a>
+            </li>
+            <li>
+              <a href="#">공지사항</a>
+              <ul>
+                <li>
+                  <a href="#">1</a>
+                </li>
+                <li>
+                  <a href="#">2</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
     <div className="content">
 
       <div className="title">
@@ -37,7 +85,7 @@ function Notice() {
       </form>
 
       <div>
-        전체 30 건
+        전체 30  건
       </div>
 
       <table className="table">
@@ -98,8 +146,8 @@ function Notice() {
 
       
     </div>
+    </div>
   );
 }
-
 
 export default Notice;
